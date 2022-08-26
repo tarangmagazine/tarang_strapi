@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "article",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "article_id": {
+      "type": "uid",
+      "required": true
+    },
+    "author": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::author.author",
+      "inversedBy": "authors"
+    },
+    "edition": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::edition.edition",
+      "inversedBy": "articles"
+    },
+    "components": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::component.component",
+      "mappedBy": "article"
+    },
+    "Illustrator": {
+      "type": "string"
+    },
+    "ShortImageS3Link": {
+      "type": "string"
+    },
+    "IssuuPageNumber": {
+      "type": "integer"
+    },
+    "IssuuArticleStoryLink": {
+      "type": "string"
+    },
+    "CommaSeparatedHashtags": {
+      "type": "richtext"
+    },
+    "IsSpotlight": {
+      "type": "boolean"
+    },
+    "ShouldPromote": {
+      "type": "boolean"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "editions",
+  "info": {
+    "singularName": "edition",
+    "pluralName": "editions",
+    "displayName": "Edition",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "release_date": {
+      "type": "date",
+      "required": true
+    },
+    "issuu_link": {
+      "type": "string"
+    },
+    "issuu_render_html": {
+      "type": "string"
+    },
+    "cover_page_s3_link": {
+      "type": "string"
+    },
+    "num_articles": {
+      "type": "integer",
+      "required": true
+    },
+    "teaser_text": {
+      "type": "text"
+    },
+    "edition_id": {
+      "type": "uid",
+      "required": true
+    },
+    "teaser_image_s3_link": {
+      "type": "string"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "edition"
+    },
+    "teaser_video_s3_link": {
+      "type": "string"
+    }
+  }
+}
